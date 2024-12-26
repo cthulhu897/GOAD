@@ -28,7 +28,7 @@ labs .................................... show all labs and available providers
 set_lab <lab> ........................... set the lab to use
 set_provider <provider> ................. set the provider to use
 set_provisioning_method <method> ........ set the provisioning method
-set_ip_range <range> .................... set the 3 first digit of the ip to use (ex: 192.168.56)
+set_ip_range <range> .................... set the 3 first digit of the ip to use (ex: 192.168.10.
 ```
 
 ### check

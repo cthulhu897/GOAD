@@ -55,7 +55,7 @@ az_location = westeurope
 or from the interactive console :
 
 ```bash
-GOAD/azure/remote/192.168.56.X > install
+GOAD/azure/remote/192.168.10.X > install
 ```
 
 ## start/stop/status
@@ -98,12 +98,12 @@ GOAD/azure/remote/192.168.56.X > install
 ## Install step by step
 
 ```bash
-GOAD/azure/remote/192.168.56.X > create_empty # create empty instance
-GOAD/azure/remote/192.168.56.X > load <instance_id>
-GOAD/azure/remote/192.168.56.X (<instance_id>) > provide # play terraform
-GOAD/azure/remote/192.168.56.X (<instance_id>) > sync_source_jumpbox # sync jumpbox source
-GOAD/azure/remote/192.168.56.X (<instance_id>) > prepare_jumpbox # install dependencies on jumpbox
-GOAD/azure/remote/192.168.56.X (<instance_id>) > provision_lab # run ansible
+GOAD/azure/remote/192.168.10.X > create_empty # create empty instance
+GOAD/azure/remote/192.168.10.X > load <instance_id>
+GOAD/azure/remote/192.168.10.X (<instance_id>) > provide # play terraform
+GOAD/azure/remote/192.168.10.X (<instance_id>) > sync_source_jumpbox # sync jumpbox source
+GOAD/azure/remote/192.168.10.X (<instance_id>) > prepare_jumpbox # install dependencies on jumpbox
+GOAD/azure/remote/192.168.10.X (<instance_id>) > provision_lab # run ansible
 ```
 
 ## Tips

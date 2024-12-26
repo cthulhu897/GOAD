@@ -149,7 +149,7 @@ provider = vmware
 ; provisioner method : local / remote
 provisioner = local
 ; ip_range (3 first ip digits)
-ip_range = 192.168.56
+ip_range = 192.168.10
 
 [aws]
 aws_region = eu-west-3
@@ -159,14 +159,14 @@ aws_zone = eu-west-3c
 az_location = westeurope
 
 [proxmox]
-pm_api_url = https://192.168.1.1:8006/api2/json
-pm_user = infra_as_code@pve
+pm_api_url = https://proxmox.diax.mx:8006/api2/json
+pm_user = packer@pve
 pm_node = GOAD
 pm_pool = GOAD
 pm_full_clone = false
 pm_storage = local
 pm_vlan = 10
-pm_network_bridge = vmbr3
+pm_network_bridge = vmbr1
 pm_network_model = e1000
 
 [proxmox_templates_id]

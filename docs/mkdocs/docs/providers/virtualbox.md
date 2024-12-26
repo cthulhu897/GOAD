@@ -28,7 +28,7 @@
 
 ```bash
 ./goad.sh -p virtualbox
-GOAD/virtualbox/local/192.168.56.X > check
+GOAD/virtualbox/local/192.168.10.X > check
 ```
 
 ![vbox_check_example.png](./../img/vbox_check_example.png)
@@ -45,9 +45,9 @@ GOAD/virtualbox/local/192.168.56.X > check
 
 ```bash
 ./goad.sh -p virtualbox
-GOAD/virtualbox/local/192.168.56.X > set_lab <lab>  # here choose the lab you want (GOAD/GOAD-Light/NHA/SCCM)
-GOAD/virtualbox/local/192.168.56.X > set_ip_range <ip_range>  # here choose the  ip range you want to use ex: 192.168.56
-GOAD/virtualbox/local/192.168.56.X > install
+GOAD/virtualbox/local/192.168.10.X > set_lab <lab>  # here choose the lab you want (GOAD/GOAD-Light/NHA/SCCM)
+GOAD/virtualbox/local/192.168.10.X > set_ip_range <ip_range>  # here choose the  ip range you want to use ex: 192.168.56
+GOAD/virtualbox/local/192.168.10.X > install
 ```
 
 ![vbox_install](./../img/vbox_install.png)

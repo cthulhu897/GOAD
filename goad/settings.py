@@ -145,8 +145,8 @@ class Settings:
             error = True  # `ip` isn't even a string
         if error:
             Log.error(f'entered value not valid')
-            Log.info(f'fallback to default ip range: 192.168.56.x')
-            self.ip_range = '192.168.56'
+            Log.info(f'fallback to default ip range: 192.168.10.x')
+            self.ip_range = '192.168.10.0'
         return self.ip_range
 
     def set_extensions(self, extensions_name):

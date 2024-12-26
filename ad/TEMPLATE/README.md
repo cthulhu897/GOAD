@@ -10,8 +10,8 @@ This is the ansible inventory file.
 - This will do the mapping between IP and the configuration file (data/config.json)
 ```
 [default]
-dc01 ansible_host=192.168.56.10 dns_domain=dc01 dict_key=dc01
-srv01 ansible_host=192.168.56.11 dns_domain=dc01 dict_key=srv01
+dc01 ansible_host=192.168.10.10 dns_domain=dc01 dict_key=dc01
+srv01 ansible_host=192.168.10.11 dns_domain=dc01 dict_key=srv01
 ```
 
 - Vm defined in the inventory must be set into the groups to run the associated roles

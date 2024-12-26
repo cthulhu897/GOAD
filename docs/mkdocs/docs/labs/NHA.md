@@ -22,7 +22,7 @@ or
 ./goad.sh
 > set_lab NHA
 > set_provider <your_provider>
-> set_iprange 192.168.56  # select the one you want and you can skip this with ludus
+> set_iprange 192.168.10.0 # select the one you want and you can skip this with ludus
 > install
 ```
 

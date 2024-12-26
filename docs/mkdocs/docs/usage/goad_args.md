@@ -14,7 +14,7 @@ optional arguments:
   -p PROVIDER, --provider PROVIDER
                         provider to use (default: vmware)
   -ip IP_RANGE, --ip_range IP_RANGE
-                        ip range to use (default: 192.168.56)
+                        ip range to use (default: 192.168.10.
   -m METHOD, --method METHOD
                         deploy method to use (default: local)
   -i INSTANCE, --instance INSTANCE

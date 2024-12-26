@@ -71,7 +71,7 @@ aws_zone = eu-west-3c
 or from the interactive console :
 
 ```bash
-GOAD/aws/remote/192.168.56.X > install
+GOAD/aws/remote/192.168.10.X > install
 ```
 
 ## start/stop/status
@@ -111,12 +111,12 @@ GOAD/aws/remote/192.168.56.X > install
 ## Install step by step
 
 ```bash
-GOAD/aws/remote/192.168.56.X > create_empty # create empty instance
-GOAD/aws/remote/192.168.56.X > load <instance_id>
-GOAD/aws/remote/192.168.56.X (<instance_id>) > provide # play terraform
-GOAD/aws/remote/192.168.56.X (<instance_id>) > sync_source_jumpbox # sync jumpbox source
-GOAD/aws/remote/192.168.56.X (<instance_id>) > prepare_jumpbox # install dependencies on jumpbox
-GOAD/aws/remote/192.168.56.X (<instance_id>) > provision_lab # run ansible
+GOAD/aws/remote/192.168.10.X > create_empty # create empty instance
+GOAD/aws/remote/192.168.10.X > load <instance_id>
+GOAD/aws/remote/192.168.10.X (<instance_id>) > provide # play terraform
+GOAD/aws/remote/192.168.10.X (<instance_id>) > sync_source_jumpbox # sync jumpbox source
+GOAD/aws/remote/192.168.10.X (<instance_id>) > prepare_jumpbox # install dependencies on jumpbox
+GOAD/aws/remote/192.168.10.X (<instance_id>) > provision_lab # run ansible
 ```
 
 ## Tips

@@ -34,7 +34,7 @@ class Config:
         config.set('default', 'provisioner', 'local')
 
         config.set('default', '; ip_range (3 first ip digits)')
-        config.set('default', 'ip_range', '192.168.56')
+        config.set('default', 'ip_range', '192.168.10.0')
 
         config.add_section('aws')
         config.set('aws', 'aws_region', 'eu-west-3')
@@ -44,19 +44,19 @@ class Config:
         config.set('azure', 'az_location', 'westeurope')
 
         config.add_section('proxmox')
-        config.set('proxmox', 'pm_api_url', 'https://192.168.1.1:8006/api2/json')
-        config.set('proxmox', 'pm_user', 'infra_as_code@pve')
+        config.set('proxmox', 'pm_api_url', 'https://proxmox.diax.mx:8006/api2/json')
+        config.set('proxmox', 'pm_user', 'packer@pve')
         config.set('proxmox', 'pm_node', 'GOAD')
         config.set('proxmox', 'pm_pool', 'GOAD')
         config.set('proxmox', 'pm_full_clone', 'false')
         config.set('proxmox', 'pm_storage', 'local')
         config.set('proxmox', 'pm_vlan', '10')
-        config.set('proxmox', 'pm_network_bridge', 'vmbr3')
+        config.set('proxmox', 'pm_network_bridge', 'vmbr1')
         config.set('proxmox', 'pm_network_model', 'e1000')
 
         config.add_section('proxmox_templates_id')
-        config.set('proxmox_templates_id', 'WinServer2019_x64', '102')
-        config.set('proxmox_templates_id', 'WinServer2016_x64', '103')
+        config.set('proxmox_templates_id', 'WinServer2019_x64', '103')
+        config.set('proxmox_templates_id', 'WinServer2016_x64', '102')
         config.set('proxmox_templates_id', 'WinServer2019_x64_utd', '104')
         config.set('proxmox_templates_id', 'Windows10_22h2_x64', '105')
 

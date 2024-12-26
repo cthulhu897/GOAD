@@ -128,7 +128,7 @@ failed: [dc02] (item={'key': 'AcrossTheSea', 'value': ['essos.local\\daenerys.ta
 
 ```bash
 An exception occurred during task execution. To see the full traceback, use -vvv. The error was:    at Microsoft.ActiveDirectory.Management.Commands.ADCmdletBase`1.BeginProcessing()
-failed: [192.168.56.xx] (item={'key': 'DragonsFriends', 'value': ['sevenkingdoms.local\\tyron.lannister', 'essos.local\\daenerys.targaryen']}) => {"ansible_loop_var": "item", "attempts": 3, "changed": false, "item": {"key": "DragonsFriends", "value": ["north.sevenkingdoms.local\\jon.snow", "sevenkingdoms.local\\tyron.lannister", "essos.local\\daenerys.targaryen"]}, "msg": "Unhandled exception while executing module: Either the target name is incorrect or the server has rejected the client credentials."}
+failed: [192.168.10.xx] (item={'key': 'DragonsFriends', 'value': ['sevenkingdoms.local\\tyron.lannister', 'essos.local\\daenerys.targaryen']}) => {"ansible_loop_var": "item", "attempts": 3, "changed": false, "item": {"key": "DragonsFriends", "value": ["north.sevenkingdoms.local\\jon.snow", "sevenkingdoms.local\\tyron.lannister", "essos.local\\daenerys.targaryen"]}, "msg": "Unhandled exception while executing module: Either the target name is incorrect or the server has rejected the client credentials."}
 ```
 
 ## Error Add-Warning
@@ -139,7 +139,7 @@ failed: [192.168.56.xx] (item={'key': 'DragonsFriends', 'value': ['sevenkingdoms
 
 ```bash
 An exception occurred during task execution. To see the full traceback, use -vvv. The error was: at , : line 475
-failed: [192.168.56.11] (item={'key': 'arya.stark', 'value': {'firstname': 'Arya', 'surname': 'Stark',
+failed: [192.168.10.11] (item={'key': 'arya.stark', 'value': {'firstname': 'Arya', 'surname': 'Stark',
 ...
 "msg": "Unhandled exception while executing module: The term 'Add-Warning' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again."}+
 ```
@@ -193,12 +193,12 @@ PLAY [DC01 - kingslanding] *****************************************************
  
 
 TASK [Gathering Facts] ***********************************************************
-fatal: [192.168.56.10]: FAILED! => {"msg": "winrm or requests is not installed: No module named winrm"}
+fatal: [192.168.10.10]: FAILED! => {"msg": "winrm or requests is not installed: No module named winrm"}
 
  
 
 PLAY RECAP ***********************************************************************
-192.168.56.10              : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+192.168.10.10              : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
 ```
 
 solution : pip install pywinrm
@@ -210,7 +210,7 @@ solution : pip install pywinrm
 ```bash
 TASK [Gathering Facts] ****************************************************************************************************************************************************
 [WARNING]: ERROR DURING WINRM SEND INPUT - attempting to recover: WinRMOperationTimeoutError
-ok: [192.168.56.11]
+ok: [192.168.10.11]
 ```
 
 solution : wait or if crashed then re-run install
@@ -222,7 +222,7 @@ solution : wait or if crashed then re-run install
 ```bash
 TASK [domain_controller : Ensure that Users presents in ou=<kingdom>,dc=SEVENKINGDOMS,dc=local] ***************************************************************************
 An exception occurred during task execution. To see the full traceback, use -vvv. The error was:    at Microsoft.ActiveDirectory.Management.Commands.ADCmdletBase`1.ProcessRecord()
-failed: [192.168.56.10] (item={u'key': u'lord.varys', u'value': {u'city': u"King's Landing", u'password': u'_W1sper_$', u'name': u'Lord Varys', u'groups': u'Small Council', u'path': u'OU=Users,OU=Crownlands,OU=kingdoms,DC=SEVENKINGDOMS,DC=local'}}) => {"ansible_loop_var": "item", "changed": false, "item": {"key": "lord.varys", "value": {"city": "King's Landing", "groups": "Small Council", "name": "Lord Varys", "password": "_W1sper_$", "path": "OU=Users,OU=Crownlands,OU=kingdoms,DC=SEVENKINGDOMS,DC=local"}}, "msg": "Unhandled exception while executing module: An unspecified error has occurred"}
+failed: [192.168.10.10] (item={u'key': u'lord.varys', u'value': {u'city': u"King's Landing", u'password': u'_W1sper_$', u'name': u'Lord Varys', u'groups': u'Small Council', u'path': u'OU=Users,OU=Crownlands,OU=kingdoms,DC=SEVENKINGDOMS,DC=local'}}) => {"ansible_loop_var": "item", "changed": false, "item": {"key": "lord.varys", "value": {"city": "King's Landing", "groups": "Small Council", "name": "Lord Varys", "password": "_W1sper_$", "path": "OU=Users,OU=Crownlands,OU=kingdoms,DC=SEVENKINGDOMS,DC=local"}}, "msg": "Unhandled exception while executing module: An unspecified error has occurred"}
 
 ```
  solution : re-run install
@@ -230,7 +230,7 @@ failed: [192.168.56.10] (item={u'key': u'lord.varys', u'value': {u'city': u"King
 ## mssql : Unable to install SQL Server
 ```
 TASK [mssql : Install the database]
-fatal: [192.168.56.22]: FAILED! => {"attempts": 3, "changed": true, "cmd": "c:\\setup\\mssql\\sql_installer.exe /configurationfile=c:\\setup\\mssql\\sql_conf.ini /IACCEPTSQLSERVERLICENSETERMS /MEDIAPATH=c:\\setup\\mssql\\media /QUIET /HIDEPROGRESSBAR", "delta": "0:00:34.891185", "end": "2022-08-17 21:26:53.976793", "msg": "non-zero return code", "rc": 2226323458, "start": "2022-08-17 21:26:19.085608", "stderr": "", "stderr_lines": [], "stdout": "Microsoft (R) SQL Server Installer\r\nCopyright (c) 2019 Microsoft.  All rights reserved.\r\n\r\nDownloading install package...\r\n\r\n\r\nOperation finished with result: Failure\r\n\r\nOops...\r\n\r\nUnable to install SQL Server (setup.exe).\r\n\r\n      Exit code (Decimal): -2068643838\r\n      Exit message: No features were installed during the setup execution. The requested features may already be installed. Please review the summary.txt log for further details.\r\n\r\n  SQL SERVER INSTALL LOG FOLDER\r\n      c:\\Program Files\\Microsoft SQL Server\\150\\Setup Bootstrap\\Log\\20220817_142624\r\n\r\n", "stdout_lines": ["Microsoft (R) SQL Server Installer", "Copyright (c) 2019 Microsoft.  All rights reserved.", "", "Downloading install package...", "", "", "Operation finished with result: Failure", "", "Oops...", "", "Unable to install SQL Server (setup.exe).", "", "      Exit code (Decimal): -2068643838", "      Exit message: No features were installed during the setup execution. The requested features may already be installed. Please review the summary.txt log for further details.", "", "  SQL SERVER INSTALL LOG FOLDER", "      c:\\Program Files\\Microsoft SQL Server\\150\\Setup Bootstrap\\Log\\20220817_142624", ""]}
+fatal: [192.168.10.22]: FAILED! => {"attempts": 3, "changed": true, "cmd": "c:\\setup\\mssql\\sql_installer.exe /configurationfile=c:\\setup\\mssql\\sql_conf.ini /IACCEPTSQLSERVERLICENSETERMS /MEDIAPATH=c:\\setup\\mssql\\media /QUIET /HIDEPROGRESSBAR", "delta": "0:00:34.891185", "end": "2022-08-17 21:26:53.976793", "msg": "non-zero return code", "rc": 2226323458, "start": "2022-08-17 21:26:19.085608", "stderr": "", "stderr_lines": [], "stdout": "Microsoft (R) SQL Server Installer\r\nCopyright (c) 2019 Microsoft.  All rights reserved.\r\n\r\nDownloading install package...\r\n\r\n\r\nOperation finished with result: Failure\r\n\r\nOops...\r\n\r\nUnable to install SQL Server (setup.exe).\r\n\r\n      Exit code (Decimal): -2068643838\r\n      Exit message: No features were installed during the setup execution. The requested features may already be installed. Please review the summary.txt log for further details.\r\n\r\n  SQL SERVER INSTALL LOG FOLDER\r\n      c:\\Program Files\\Microsoft SQL Server\\150\\Setup Bootstrap\\Log\\20220817_142624\r\n\r\n", "stdout_lines": ["Microsoft (R) SQL Server Installer", "Copyright (c) 2019 Microsoft.  All rights reserved.", "", "Downloading install package...", "", "", "Operation finished with result: Failure", "", "Oops...", "", "Unable to install SQL Server (setup.exe).", "", "      Exit code (Decimal): -2068643838", "      Exit message: No features were installed during the setup execution. The requested features may already be installed. Please review the summary.txt log for further details.", "", "  SQL SERVER INSTALL LOG FOLDER", "      c:\\Program Files\\Microsoft SQL Server\\150\\Setup Bootstrap\\Log\\20220817_142624", ""]}
 ```
 
 solution : re-run installer

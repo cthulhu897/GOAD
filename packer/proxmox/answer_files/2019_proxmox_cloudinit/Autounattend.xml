@@ -110,11 +110,11 @@
             <SetupUILanguage>
                 <UILanguage>en-US</UILanguage>
             </SetupUILanguage>
-            <InputLocale>080A:0000080A</InputLocale>
+            <InputLocale>es-MX</InputLocale>
             <SystemLocale>en-US</SystemLocale>
             <UILanguage>en-US</UILanguage>
-            <UILanguageFallback>fr-FR</UILanguageFallback>
-            <UserLocale>en-US</UserLocale>
+            <UILanguageFallback>en-US</UILanguageFallback>
+            <UserLocale>es-MX</UserLocale>
         </component>
     </settings>
     <settings pass="specialize">

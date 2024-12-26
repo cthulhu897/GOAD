@@ -75,7 +75,7 @@ build {
   provisioner "powershell" {
     elevated_password = "vagrant"
     elevated_user     = "vagrant"
-    pause_before      = "1m0s"
+    pause_before      = "60s"
     scripts           = ["${path.root}/scripts/sysprep/cloudbase-init-p2.ps1"]
   }
 

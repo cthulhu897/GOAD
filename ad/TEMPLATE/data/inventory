@@ -4,11 +4,11 @@
 domain_name=TEMPLATE
 
 ; global settings inventory default value
-keyboard_layouts=["en-US", "da-DK", "fr-FR"]
+keyboard_layouts=["en-US", "es-MX"]
 
 ; modify this to add a default route
 add_route=no
-route_gateway=192.168.56.1
+route_gateway=192.168.10.1
 route_network=10.0.0.0/8
 
 ; modify this to enable http proxy
